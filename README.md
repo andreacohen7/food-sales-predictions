@@ -44,7 +44,7 @@ The data was first prepared by cleaning it.
   - constant imputation was used for categorical columns
   - numeric data was scaled
   - object columns were one-hot encoded
-- For machine learning with regression tree:
+- For machine learning with a regression tree model:
   - inconsistencies in categorical data were fixed
   - ordinal categorical data was encoded
   - mean imputation was used for float columns
@@ -67,3 +67,32 @@ The most frequent observations are at lower values--most of the items in the sto
 
 There are more frequent observations at lower values--most of the stores have low sales.
 
+### Explanatory Visuals
+
+Scatterplots were used to compare the item properties to the overall sales.
+Barplots were used to find the effect of outlet properties on overall sales.
+
+
+
+### Model
+
+Describe your final model
+
+Report the most important metrics
+
+Refer to the metrics to describe how well the model would solve the business problem
+
+## Recommendations:
+
+More of your own text here
+
+
+## Limitations & Next Steps
+
+More of your own text here
+
+
+### For further information
+
+
+For any additional questions, please contact **email**
