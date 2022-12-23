@@ -72,7 +72,10 @@ There are more frequent observations at lower values--most of the stores have lo
 Scatterplots were used to compare the item properties to the overall sales.
 Barplots were used to find the effect of outlet properties on overall sales.
 
-![Maximum Item Price vs. Sales.png]
+![Maximum Item Price vs. Sales.png](https://github.com/andreacohen7/food-sales-predictions/blob/main/Maximum%20Item%20Price%20vs.%20Sales.png)
+
+
+
 ### Model
 
 Describe your final model
