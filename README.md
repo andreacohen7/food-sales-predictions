@@ -51,9 +51,9 @@ The data was first prepared by cleaning it.
   - constant imputation was used for categorical columns
   - object columns were one-hot encoded
 
-### Exploratory Data Analysis
+### Exploratory Data Analysis:
 
-Histograms were used to view the distributions of various features and the target (sales).
+Histograms were used to view the distributions of various features and the target.
 
 #### Distribution of Item Visibility
 
@@ -67,34 +67,62 @@ The most frequent observations are at lower values--most of the items in the sto
 
 There are more frequent observations at lower values--most of the stores have low sales.
 
-### Explanatory Visuals
+### Explanatory Visuals:
 
 Scatterplots were used to compare the item properties to the overall sales.
 Barplots were used to find the effect of outlet properties on overall sales.
 
+#### Do higher prices increase the overall sales at the outlet?
+
 ![Maximum Item Price vs. Sales.png](https://github.com/andreacohen7/food-sales-predictions/blob/main/Maximum%20Item%20Price%20vs.%20Sales.png)
 
-![The Effect of Outlet Properties on Sales.png]
+- This scatterplot shows a positive correlation between the maximum price of an item and the overall outlet sales. Outlets with higher maximum prices tend to have higher overall sales. However, we can't assume that higher prices cause higher sales, just because they are correlated.
 
-### Model
+#### Does the outlet size, the outlet location, or the the outlet type affect the sales?
 
-Describe your final model
+![The Effect of Outlet Properties on Sales.png](https://github.com/andreacohen7/food-sales-predictions/blob/main/The%20Effect%20of%20Outlet%20Properties%20on%20Sales.png)
 
-Report the most important metrics
+- The outlet properties make a difference in overall sales. First, medium-sized stores have the highest sales, and small-sized stores have the lowest sales. Second, tier 2 and 3 locations also have the highest sales. Finally, supermarkets have higher sales than grocery stores. This might indicate that medium and large stores, tier 2 and 3 stores, and supermarkets use more effective sales strategies.
 
-Refer to the metrics to describe how well the model would solve the business problem
+### Machine Learning:
 
-## Recommendations:
+#### Models Evaluated and Results:
 
-More of your own text here
+- Linear Regression Model:
+fitting a line in order to predict the sales
+  - Test Scores
+    - MAE: 3,178,221,135,989.0835 
+    - MSE: 1,968,512,240,476,133,134,342,029,312.0000 
+    - RMSE: 44,367,919,046,041.9609 
+    - R2: -713493456135360479232.0000
+  - the linear regression model explained <0% of the variation.
+  - while the model is making an average error of >3 trillion, it is making some much larger errors.
 
+- Regression Tree Model with the max_depth tuned to 5
+using decision trees to predict the sales
+  - Test Scores
+    - MAE: 736.8796 
+    - MSE: 1,114,471.1153 
+    - RMSE: 1,055.6851 
+    - R2: 0.5961
+  - the regression tree model explained 60% of the variation.
+  - while the model is making an average error of 859.91, it is still making some larger errors
 
-## Limitations & Next Steps
+The Regression Tree Model had the lowest MAE and RMSE for the testing data. The Regression Tree Model also had the highest R2 score.
+**The Regression Tree Model was the best model, based on the regression metrics for the testing data.**
+Using the Regression Tree Model to predict future sales would not be very reliable--the predictions might be off by about 34%, with some larger errors.  However, the model would account for about 60% of the variation in sales.
 
-More of your own text here
+### Recommendations:
 
+#### Understanding the properties of products and outlets that play crucial roles in increasing sales:
+The retailer should increase use of the effective sales strategies (including item visibility and maximum item price) used by medium and large stores, tier 2 and 3 stores, and supermarkets. The retailer should also recognize the room for further growth in small stores, tier 1 locations, and grocery stores--they might need to use different sales strategies in these outlets than in medium and large stores/tier 2 and 3 stores/supermarkets.
+
+#### Predicting future sales based on the data provided:
+Overall, the Regression Tree Model was the best model, compared to the Linear Regression Model.  Sales predictions might be off by about 34%, but the model would account for about 60% of the variation in future sales.
+
+### Limitations & Next Steps
+The information collected provided some insight into the the properties of the products and outlets, but did not predict future sales well.  The retailer should investigate the effective sales strategies at their highest-selling outlets for an immediate action plan to increase sales.  They should also collect different data--there are clearly other properties about the products and outlets that were not captured in this data set that can predict future sales better.
 
 ### For further information
 
-
-For any additional questions, please contact **email**
+For any additional questions, please contact *andrearcohen7@gmail.com*.
