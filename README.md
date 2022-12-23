@@ -74,7 +74,7 @@ Barplots were used to find the effect of outlet properties on overall sales.
 
 ![Maximum Item Price vs. Sales.png](https://github.com/andreacohen7/food-sales-predictions/blob/main/Maximum%20Item%20Price%20vs.%20Sales.png)
 
-
+![The Effect of Outlet Properties on Sales.png]
 
 ### Model
 
