@@ -53,13 +53,13 @@ The data was first prepared by cleaning it.
 
 ### Exploratory Data Analysis
 
-Histograms were used to view the distributions of various features.
+Histograms were used to view the distributions of various features and the target (sales).
 
 #### Distribution of Item Visibility
 
 ![Item Visibility.png](https://github.com/andreacohen7/food-sales-predictions/blob/main/Item%20Visibility.png)
 
-The most frequent observations are at lower values--most of the items in the store have a low visibility.
+The most frequent observations are at lower values--most of the items in the stores have a low visibility score.
 
 #### Distribution of Item Outlet Sales
 
