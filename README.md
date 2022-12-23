@@ -38,6 +38,7 @@ The data was first prepared by cleaning it.
     - constant imputation for categorical data because there might be a pattern to the missing categorical data).  
   - inconsistencies in categorical data were fixed
 - For machine learning with linear regression: 
+  - columns with unique identifiers were dropped
   - inconsistencies in categorical data were fixed
   - ordinal categorical data was encoded
   - mean imputation was used for float columns
@@ -45,6 +46,7 @@ The data was first prepared by cleaning it.
   - numeric data was scaled
   - object columns were one-hot encoded
 - For machine learning with a regression tree model:
+  - columns with unique identifiers were dropped
   - inconsistencies in categorical data were fixed
   - ordinal categorical data was encoded
   - mean imputation was used for float columns
@@ -91,26 +93,26 @@ Barplots were used to find the effect of outlet properties on overall sales.
 - Linear Regression Model:
 fitting a line in order to predict the sales
   - Test Scores
-    - MAE: 3,178,221,135,989.0835 
-    - MSE: 1,968,512,240,476,133,134,342,029,312.0000 
-    - RMSE: 44,367,919,046,041.9609 
-    - R2: -713493456135360479232.0000
-  - the linear regression model explained <0% of the variation.
-  - while the model is making an average error of >3 trillion, it is making some much larger errors.
+    - MAE: 804.6182 
+    - MSE: 1,195,841.2093 
+    - RMSE: 1,093.5452 
+    - R2: 0.5666
+  - the linear regression model explained 57% of the variation.
+  - while the model is making an average error of 804.62, it is making some much larger errors.
 
 - Regression Tree Model with the max_depth tuned to 5
 using decision trees to predict the sales
   - Test Scores
-    - MAE: 736.8796 
-    - MSE: 1,114,471.1153 
-    - RMSE: 1,055.6851 
-    - R2: 0.5961
-  - the regression tree model explained 60% of the variation.
-  - while the model is making an average error of 859.91, it is still making some larger errors
+    - MAE: 738.3173 
+    - MSE: 1,118,185.9731 
+    - RMSE: 1,057.4431 
+    - R2: 0.5947
+  - the regression tree model explained 59% of the variation.
+  - while the model is making an average error of 738.32, it is still making some larger errors
 
 The Regression Tree Model had the lowest MAE and RMSE for the testing data. The Regression Tree Model also had the highest R2 score.
 **The Regression Tree Model was the best model, based on the regression metrics for the testing data.**
-Using the Regression Tree Model to predict future sales would not be very reliable--the predictions might be off by about 34%, with some larger errors.  However, the model would account for about 60% of the variation in sales.
+Using the Regression Tree Model to predict future sales would not be very reliable--the predictions might be off by about 34%, with some larger errors.  However, the model would account for about 59% of the variation in sales.
 
 ### Recommendations:
 
@@ -118,7 +120,7 @@ Using the Regression Tree Model to predict future sales would not be very reliab
 The retailer should increase use of the effective sales strategies (including item visibility and maximum item price) used by medium and large stores, tier 2 and 3 stores, and supermarkets. The retailer should also recognize the room for further growth in small stores, tier 1 locations, and grocery stores--they might need to use different sales strategies in these outlets than in medium and large stores/tier 2 and 3 stores/supermarkets.
 
 #### Predicting future sales based on the data provided:
-Overall, the Regression Tree Model was the best model, compared to the Linear Regression Model.  Sales predictions might be off by about 34%, but the model would account for about 60% of the variation in future sales.
+Overall, the Regression Tree Model was the best model, compared to the Linear Regression Model.  Sales predictions might be off by about 34%, but the model would account for about 59% of the variation in future sales.
 
 ### Limitations & Next Steps
 The information collected provided some insight into the the properties of the products and outlets, but did not predict future sales well.  The retailer should investigate the effective sales strategies at their highest-selling outlets for an immediate action plan to increase sales.  They should also collect different data--there are clearly other properties about the products and outlets that were not captured in this data set that can predict future sales better.
